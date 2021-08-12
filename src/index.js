@@ -24,21 +24,27 @@ const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
 
 /*Invocamos los path para utilizarlos en el motor de plantillas */
-const layoutFolderPath = path.resolve(__dirname, '../views/layouts');
-const defaultLayerPth = path.resolve(__dirname, '../views/layouts/index.hbs');
-const partialFolderPath = path.resolve(__dirname, '../views/partial');
+// const layoutFolderPath = path.resolve(__dirname, '../views/layouts');
+// const defaultLayerPth = path.resolve(__dirname, '../views/layouts/index.hbs');
+// const partialFolderPath = path.resolve(__dirname, '../views/partial');
 
 /* Trabajamos con el motor de plantillas handlebars */
-app.set('view engine', 'hbs');
-app.engine(
-  'hbs',
-  handlebars({
-    layoutsDir: layoutFolderPath,
-    partialsDir: partialFolderPath,
-    defaultLayout: defaultLayerPth,
-    extname: 'hbs',
-  })
-);
+// app.set('view engine', 'hbs');
+// app.engine(
+//   'hbs',
+//   handlebars({
+//     layoutsDir: layoutFolderPath,
+//     partialsDir: partialFolderPath,
+//     defaultLayout: defaultLayerPth,
+//     extname: 'hbs',
+//   })
+// );
+
+/* Trabajando con el motor de plantillas pug */
+app.set('view engine', 'pug');
+const viewsPath = path.resolve(__dirname, '../views');
+app.set('views', viewsPath);
+
 
 /*Invocamos a nuestra carpeta ruta para realizar las llamadas*/
 app.use('/api/productos', routerProductos);

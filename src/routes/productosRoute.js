@@ -36,15 +36,26 @@ router.get('/listar/:id', (req, res) => {
     });
   });
 
-  /* Creamos nuestra llamada vista */
+  /* Creamos nuestra llamada vista para hbs */
+// router.get('/vista', (req, res) => {
+//   const dinamicData = {
+//     style:'table-dark',
+//     data: miProducto.leer(),
+//   }
+  
+//   res.render('main', dinamicData);
+// });
+
+/* Creamos nuestra llamada vista para pug */
 router.get('/vista', (req, res) => {
   const dinamicData = {
     style:'table-dark',
     data: miProducto.leer(),
   }
   
-  res.render('main', dinamicData);
+  res.render('datos.pug', dinamicData);
 });
+
 
 /*Para agregar productos a nuestra api*/
 router.post('/guardar', (req, res) => {
