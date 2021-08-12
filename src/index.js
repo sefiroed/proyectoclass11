@@ -22,7 +22,7 @@ const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
 
 /* Trabajando con el motor de plantillas pug */
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 const viewsPath = path.resolve(__dirname, '../views');
 app.set('views', viewsPath);
 
