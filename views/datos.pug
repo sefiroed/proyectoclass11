@@ -1,7 +1,8 @@
 html 
   head 
-    title desafio
+    title vista_class_pug
     link(rel="stylesheet" href="style.css")
   body
-    h1(id="miTag" class="toplaner")=titulo
-    meter(min=min max=max value=nivel)=mensaje
+    div
+      h1 LISTA DE PRODUCTOS
+      include adicionalespug/tabla

@@ -53,7 +53,7 @@ router.get('/vista', (req, res) => {
     data: miProducto.leer(),
   }
   
-  res.render('datos.pug', dinamicData);
+  res.render('datos', dinamicData);
 });
 
 

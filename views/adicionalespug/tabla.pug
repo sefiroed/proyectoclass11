@@ -1,0 +1,19 @@
+html 
+if data.length > 0
+  body
+    table.table.table-striped
+      tr
+        th Producto
+        th Precio
+        th URL
+      
+      each n in data
+        tr
+          td= n.producto
+          td= n.precio
+          td <img style="width: 100px" src="n.url"> 
+else 
+  p NO HAY PRODUCTOS CARGADOS   
+            
+        
+  
