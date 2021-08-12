@@ -1,0 +1,28 @@
+{{#if data.length }}
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <div>
+            {{#each data}}
+            <tr>
+                <td scope="row">{{this.producto}}</td>
+                <td scope="row">{{this.precio}}</td>
+                <td scope="row"><img style="width: 100px" src="{{this.url}}"></img></td>
+            </tr>
+            {{/each}}
+        </div>
+    </tbody>
+</table>
+
+{{else}}
+<p>NO HAY PRODUCTOS</p>
+{{/if}} 
+
+
